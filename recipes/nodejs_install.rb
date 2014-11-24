@@ -8,20 +8,8 @@ case node['platform']
 include_recipe "nodejs"
 include_recipe "nodejs::npm"
 bash "update npm" do
-  cwd "/"
+  cwd "#{node['qubell-nodejs']['app_root']}"
   code <<-EOH
     npm update npm -g
    EOH
 end
-
-
-case node["platform_family"]
-  when "rhel"
-    service "iptables" do
-      action :stop
-    end
-  when "debian"
-    service "ufw" do
-      action :stop
-    end
-  end

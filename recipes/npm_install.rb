@@ -1,7 +1,7 @@
 if (! node["qubell-nodejs"]["npm"]["packages"].empty?)
   node["qubell-nodejs"]["npm"]["packages"].each do |pkg|
     bash  'install #{pkg}' do
-      cwd "/"
+      cwd "#{node['qubell-nodejs']['app_root']}"
       code <<-EOH
          npm install #{pkg}
         EOH
