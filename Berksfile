@@ -3,7 +3,7 @@ site :opscode
 metadata
 
 cookbook 'apt', '~> 1.7.0'
-cookbook 'nodejs', '~> 1.3.0'
+cookbook 'nodejs', '~> 2.1.0'
 cookbook 'dmg', '~> 2.2.0'
 cookbook 'windows', '~> 1.30.2'
 cookbook 'build-essential', '~> 1.4.4'
